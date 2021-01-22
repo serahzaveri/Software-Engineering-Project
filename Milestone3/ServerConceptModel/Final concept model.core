@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ASCII"?>
+<core:COREConcern xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://cs.mcgill.ca/sel/core/2.0" xmi:id="_InQEMDIWEeuaxNYCaR32sg" name="Final concept model" featureModel="_InQEMTIWEeuaxNYCaR32sg" impactModel="_InQEMzIWEeuaxNYCaR32sg">
+  <artefacts xsi:type="core:COREFeatureModel" xmi:id="_InQEMTIWEeuaxNYCaR32sg" root="_InQEMjIWEeuaxNYCaR32sg">
+    <features xmi:id="_InQEMjIWEeuaxNYCaR32sg" name="Final concept model" realizedBy="_MbvCcDIWEeuaxNYCaR32sg"/>
+  </artefacts>
+  <artefacts xsi:type="core:COREImpactModel" xmi:id="_InQEMzIWEeuaxNYCaR32sg" name="Impact Model"/>
+  <artefacts xsi:type="core:COREExternalArtefact" xmi:id="_Mbpi4DIWEeuaxNYCaR32sg" name="Final concept model" scene="_MbvCcDIWEeuaxNYCaR32sg" languageName="Class Diagram">
+    <rootModelElement href="Class%20Diagram/Final%20concept%20model.domain_model.cdm#/"/>
+  </artefacts>
+  <scenes xmi:id="_MbvCcDIWEeuaxNYCaR32sg" name="Final concept model" realizes="_InQEMjIWEeuaxNYCaR32sg" perspectiveName="Domain Modelling">
+    <artefacts xmi:id="_MbvCcTIWEeuaxNYCaR32sg" value="_Mbpi4DIWEeuaxNYCaR32sg" key="Domain Model"/>
+  </scenes>
+</core:COREConcern>

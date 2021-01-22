@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<urn:URNspec xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ucm.map="http:///ucm/map.ecore" xmlns:urn="http:///urn.ecore" name="URNspec" author="vicol" created="November 29, 2020 at 4:24:22 PM EST" modified="November 29, 2020 at 7:50:03 PM EST" specVersion="4" urnVersion="1.27" nextGlobalID="308">
+  <ucmspec>
+    <scenarioGroups name="ScenarioGroup5" id="5">
+      <scenarios name="ScenarioDef6" id="6"/>
+    </scenarioGroups>
+  </ucmspec>
+  <grlspec>
+    <groups name="StrategiesGroup3" id="3" strategies="4"/>
+    <strategies name="EvaluationStrategy4" id="4" author="vicol" group="3"/>
+    <impactModel/>
+    <indicatorGroup name="Time" id="7" isRedesignCategory="true"/>
+    <indicatorGroup name="Cost" id="8" isRedesignCategory="true"/>
+    <indicatorGroup name="Quality" id="9" isRedesignCategory="true"/>
+    <indicatorGroup name="Flexibility" id="10" isRedesignCategory="true"/>
+    <featureModel/>
+  </grlspec>
+  <urndef>
+    <responsibilities name="RegisterGameService &lt;&lt;out>>" id="287" respRefs="288"/>
+    <responsibilities name="GameRegistered &lt;&lt;in>>" id="293" respRefs="294"/>
+    <responsibilities name="UnregisterGameService &lt;&lt;out>>" id="301" respRefs="302"/>
+    <responsibilities name="GameServiceUnregistered &lt;&lt;in>>" id="303" respRefs="304"/>
+    <specDiagrams xsi:type="ucm.map:UCMmap" name="UCMmap2" id="2">
+      <nodes xsi:type="ucm.map:StartPoint" name="Start" id="13" x="42" y="288" succ="//@urndef/@specDiagrams.0/@connections.0">
+        <label/>
+        <precondition deltaX="40" deltaY="-17" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:EndPoint" name="End" id="15" x="1506" y="293" pred="//@urndef/@specDiagrams.0/@connections.13">
+        <label/>
+        <postcondition deltaX="-40" deltaY="-20" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:Stub" name="GameSetup" id="29" x="471" y="293" succ="//@urndef/@specDiagrams.0/@connections.1" pred="//@urndef/@specDiagrams.0/@connections.11">
+        <label/>
+      </nodes>
+      <nodes xsi:type="ucm.map:Stub" name="PlayRound" id="133" x="718" y="290" succ="//@urndef/@specDiagrams.0/@connections.3" pred="//@urndef/@specDiagrams.0/@connections.6">
+        <label/>
+      </nodes>
+      <nodes xsi:type="ucm.map:Stub" name="GameOver" id="164" x="972" y="292" succ="//@urndef/@specDiagrams.0/@connections.4" pred="//@urndef/@specDiagrams.0/@connections.5">
+        <label/>
+      </nodes>
+      <nodes xsi:type="ucm.map:OrFork" name="OrFork240" id="240" x="852" y="291" succ="//@urndef/@specDiagrams.0/@connections.5 //@urndef/@specDiagrams.0/@connections.2" pred="//@urndef/@specDiagrams.0/@connections.3"/>
+      <nodes xsi:type="ucm.map:OrJoin" name="OrJoin255" id="255" x="572" y="292" succ="//@urndef/@specDiagrams.0/@connections.6" pred="//@urndef/@specDiagrams.0/@connections.1 //@urndef/@specDiagrams.0/@connections.8"/>
+      <nodes xsi:type="ucm.map:DirectionArrow" name="[&lt;5 times]" id="263" x="806" y="192" succ="//@urndef/@specDiagrams.0/@connections.7" pred="//@urndef/@specDiagrams.0/@connections.2"/>
+      <nodes xsi:type="ucm.map:DirectionArrow" name="DirectionArrow274" id="274" x="636" y="205" succ="//@urndef/@specDiagrams.0/@connections.8" pred="//@urndef/@specDiagrams.0/@connections.9"/>
+      <nodes xsi:type="ucm.map:DirectionArrow" name="DirectionArrow285" id="285" x="734" y="118" succ="//@urndef/@specDiagrams.0/@connections.9" pred="//@urndef/@specDiagrams.0/@connections.7"/>
+      <nodes xsi:type="ucm.map:RespRef" name="RespRef288" id="288" x="155" y="288" succ="//@urndef/@specDiagrams.0/@connections.10" pred="//@urndef/@specDiagrams.0/@connections.0" respDef="287">
+        <label/>
+      </nodes>
+      <nodes xsi:type="ucm.map:RespRef" name="RespRef294" id="294" x="337" y="289" succ="//@urndef/@specDiagrams.0/@connections.11" pred="//@urndef/@specDiagrams.0/@connections.10" respDef="293">
+        <label/>
+      </nodes>
+      <nodes xsi:type="ucm.map:RespRef" name="RespRef302" id="302" x="1122" y="294" succ="//@urndef/@specDiagrams.0/@connections.12" pred="//@urndef/@specDiagrams.0/@connections.4" respDef="301">
+        <label/>
+      </nodes>
+      <nodes xsi:type="ucm.map:RespRef" name="RespRef304" id="304" x="1336" y="298" succ="//@urndef/@specDiagrams.0/@connections.13" pred="//@urndef/@specDiagrams.0/@connections.12" respDef="303">
+        <label/>
+      </nodes>
+      <connections xsi:type="ucm.map:NodeConnection" source="13" target="288"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="29" target="255"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="240" target="263">
+        <condition deltaX="-14" label="&lt; 5 times" expression="true" description=""/>
+      </connections>
+      <connections xsi:type="ucm.map:NodeConnection" source="133" target="240"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="164" target="302"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="240" target="164">
+        <condition deltaX="61" deltaY="-9" label="5 times" expression="true" description=""/>
+      </connections>
+      <connections xsi:type="ucm.map:NodeConnection" source="255" target="133"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="263" target="285"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="274" target="255"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="285" target="274"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="288" target="294"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="294" target="29"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="302" target="304"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="304" target="15"/>
+    </specDiagrams>
+  </urndef>
+  <metadata name="_Use0to100EvaluationRange" value="false"/>
+  <dynamicContexts name="DynamicContext12" id="12" groups="11"/>
+  <dynamicContextGroups name="DynamicContextGroup11" id="11" contexts="12"/>
+  <timepointGroups/>
+</urn:URNspec>

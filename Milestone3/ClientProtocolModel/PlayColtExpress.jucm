@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<urn:URNspec xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ucm.map="http:///ucm/map.ecore" xmlns:urn="http:///urn.ecore" name="URNspec" author="force" created="November 29, 2020 at 10:04:16 AM EST" modified="November 29, 2020 at 10:02:40 PM EST" specVersion="5" urnVersion="1.27" nextGlobalID="1180">
+  <ucmspec>
+    <scenarioGroups name="ScenarioGroup5" id="5">
+      <scenarios name="ScenarioDef6" id="6"/>
+    </scenarioGroups>
+  </ucmspec>
+  <grlspec>
+    <groups name="StrategiesGroup3" id="3" strategies="4"/>
+    <strategies name="EvaluationStrategy4" id="4" author="force" group="3"/>
+    <impactModel/>
+    <indicatorGroup name="Time" id="7" isRedesignCategory="true"/>
+    <indicatorGroup name="Cost" id="8" isRedesignCategory="true"/>
+    <indicatorGroup name="Quality" id="9" isRedesignCategory="true"/>
+    <indicatorGroup name="Flexibility" id="10" isRedesignCategory="true"/>
+    <featureModel/>
+  </grlspec>
+  <urndef>
+    <specDiagrams xsi:type="ucm.map:UCMmap" name="UCMmap2" id="2">
+      <nodes xsi:type="ucm.map:StartPoint" name="Start" id="13" x="214" y="437" succ="//@urndef/@specDiagrams.0/@connections.0">
+        <label/>
+        <precondition deltaX="40" deltaY="-17" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:EndPoint" name="EndGame" id="61" x="1333" y="426" pred="//@urndef/@specDiagrams.0/@connections.9">
+        <label/>
+        <postcondition deltaX="-40" deltaY="-20" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:OrJoin" name="OrJoin1101" id="1101" x="502" y="424" succ="//@urndef/@specDiagrams.0/@connections.2" pred="//@urndef/@specDiagrams.0/@connections.5 //@urndef/@specDiagrams.0/@connections.7"/>
+      <nodes xsi:type="ucm.map:OrFork" name="OrFork1114" id="1114" x="1131" y="405" succ="//@urndef/@specDiagrams.0/@connections.3 //@urndef/@specDiagrams.0/@connections.1" pred="//@urndef/@specDiagrams.0/@connections.10"/>
+      <nodes xsi:type="ucm.map:DirectionArrow" name="DirectionArrow1115" id="1115" x="826" y="81" succ="//@urndef/@specDiagrams.0/@connections.4" pred="//@urndef/@specDiagrams.0/@connections.8"/>
+      <nodes xsi:type="ucm.map:Stub" name="GameSetup" id="1130" x="407" y="428" succ="//@urndef/@specDiagrams.0/@connections.5" pred="//@urndef/@specDiagrams.0/@connections.0">
+        <label/>
+      </nodes>
+      <nodes xsi:type="ucm.map:Stub" name="PlayRound" id="1133" x="760" y="424" succ="//@urndef/@specDiagrams.0/@connections.6" pred="//@urndef/@specDiagrams.0/@connections.2">
+        <label/>
+      </nodes>
+      <nodes xsi:type="ucm.map:DirectionArrow" name="DirectionArrow1136" id="1136" x="649" y="245" succ="//@urndef/@specDiagrams.0/@connections.7" pred="//@urndef/@specDiagrams.0/@connections.4"/>
+      <nodes xsi:type="ucm.map:DirectionArrow" name="DirectionArrow1137" id="1137" x="1020" y="279" succ="//@urndef/@specDiagrams.0/@connections.8" pred="//@urndef/@specDiagrams.0/@connections.1"/>
+      <nodes xsi:type="ucm.map:Stub" name="EndOfGame" id="1145" x="1244" y="416" succ="//@urndef/@specDiagrams.0/@connections.9" pred="//@urndef/@specDiagrams.0/@connections.3">
+        <label/>
+      </nodes>
+      <nodes xsi:type="ucm.map:OrFork" name="OrFork1168" id="1168" x="950" y="412" succ="//@urndef/@specDiagrams.0/@connections.10 //@urndef/@specDiagrams.0/@connections.11" pred="//@urndef/@specDiagrams.0/@connections.6"/>
+      <nodes xsi:type="ucm.map:EndPoint" name="EndSavedGame" id="1170" x="1299" y="726" pred="//@urndef/@specDiagrams.0/@connections.11">
+        <label deltaX="-68" deltaY="-36"/>
+        <postcondition deltaX="-40" deltaY="-20" label="" expression="true"/>
+      </nodes>
+      <connections xsi:type="ucm.map:NodeConnection" source="13" target="1130"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="1114" target="1137">
+        <condition deltaX="-5" deltaY="29" label="&lt; 5 times" expression="true" description=""/>
+      </connections>
+      <connections xsi:type="ucm.map:NodeConnection" source="1101" target="1133"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="1114" target="1145">
+        <condition deltaX="59" deltaY="-22" label="5 times" expression="true" description=""/>
+      </connections>
+      <connections xsi:type="ucm.map:NodeConnection" source="1115" target="1136"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="1130" target="1101"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="1133" target="1168"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="1136" target="1101"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="1137" target="1115"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="1145" target="61"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="1168" target="1114">
+        <condition label="" expression="true" description=""/>
+      </connections>
+      <connections xsi:type="ucm.map:NodeConnection" source="1168" target="1170">
+        <condition deltaX="252" deltaY="-1" label="game was saved by a player" expression="true" description=""/>
+      </connections>
+    </specDiagrams>
+  </urndef>
+  <metadata name="_Use0to100EvaluationRange" value="false"/>
+  <dynamicContexts name="DynamicContext12" id="12" groups="11"/>
+  <dynamicContextGroups name="DynamicContextGroup11" id="11" contexts="12"/>
+  <timepointGroups/>
+</urn:URNspec>

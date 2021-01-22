@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="ASCII"?>
+<classdiagram:ClassDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:classdiagram="http://cs.mcgill.ca/sel/cdm/1.0" name="Final concept model">
+  <classes xsi:type="classdiagram:Class" name="Player">
+    <associationEnds name="played" assoc="//@associations.0" upperBound="-1"/>
+    <associationEnds name="myGame" assoc="//@associations.1" lowerBound="1"/>
+    <associationEnds name="myGame1" assoc="//@associations.2" lowerBound="1"/>
+    <associationEnds name="myHand" assoc="//@associations.4"/>
+    <associationEnds name="myBandit" assoc="//@associations.7"/>
+    <associationEnds name="currentSession" assoc="//@associations.8" lowerBound="1"/>
+    <associationEnds name="sessions" assoc="//@associations.9" upperBound="-1"/>
+    <associationEnds name="myGuiActor" assoc="//@associations.11" lowerBound="1"/>
+    <attributes name="username" type="//@types.6"/>
+    <attributes name="accessToken" type="//@types.6"/>
+    <attributes name="refreshToken" type="//@types.6"/>
+  </classes>
+  <classes xsi:type="classdiagram:Class" name="Card">
+    <associationEnds name="player" assoc="//@associations.0" lowerBound="1"/>
+    <associationEnds name="hand" assoc="//@associations.5"/>
+    <attributes name="type" type="//@types.14"/>
+    <attributes name="visible" type="//@types.2"/>
+  </classes>
+  <classes xsi:type="classdiagram:Class" name="Game">
+    <associationEnds name="currentPlayer" assoc="//@associations.1" lowerBound="1"/>
+    <associationEnds name="participants" assoc="//@associations.2" lowerBound="3" upperBound="6"/>
+    <associationEnds name="myGameBoard" assoc="//@associations.3" lowerBound="1" referenceType="Composition"/>
+    <associationEnds name="mySession" assoc="//@associations.10" lowerBound="1"/>
+    <attributes name="gamePhase" type="//@types.13"/>
+  </classes>
+  <classes xsi:type="classdiagram:Class" name="GameBoard">
+    <associationEnds name="myGame" assoc="//@associations.3" lowerBound="1"/>
+  </classes>
+  <classes xsi:type="classdiagram:Class" name="Hand">
+    <associationEnds name="owner" assoc="//@associations.4" lowerBound="1"/>
+    <associationEnds name="cards" assoc="//@associations.5" upperBound="22" referenceType="Aggregation"/>
+  </classes>
+  <classes xsi:type="classdiagram:Class" name="Bandit">
+    <associationEnds name="myBandits" assoc="//@associations.6" upperBound="5"/>
+    <associationEnds name="bandit" assoc="//@associations.6" lowerBound="1"/>
+    <associationEnds name="myPlayer" assoc="//@associations.7" lowerBound="1"/>
+    <attributes name="power" type="//@classes.7"/>
+    <attributes name="bulletsLeft" type="//@types.4"/>
+  </classes>
+  <classes xsi:type="classdiagram:Class" name="Tuco" superTypes="//@classes.5"/>
+  <classes xsi:type="classdiagram:Class" name="Ability" dataType="true"/>
+  <classes xsi:type="classdiagram:Class" name="Cheyenne" superTypes="//@classes.5"/>
+  <classes xsi:type="classdiagram:Class" name="Belle" superTypes="//@classes.5"/>
+  <classes xsi:type="classdiagram:Class" name="Django" superTypes="//@classes.5"/>
+  <classes xsi:type="classdiagram:Class" name="Ghost" superTypes="//@classes.5"/>
+  <classes xsi:type="classdiagram:Class" name="Doc" superTypes="//@classes.5"/>
+  <classes xsi:type="classdiagram:Class" name="ServerActor"/>
+  <classes xsi:type="classdiagram:Class" name="GuiActor">
+    <associationEnds name="myPlayer" assoc="//@associations.11"/>
+  </classes>
+  <classes xsi:type="classdiagram:Class" name="Session">
+    <associationEnds name="joinedPlayers" assoc="//@associations.8" lowerBound="1" upperBound="6"/>
+    <associationEnds name="creator" assoc="//@associations.9" lowerBound="1"/>
+    <associationEnds name="myGame" assoc="//@associations.10" lowerBound="1"/>
+    <attributes name="launched" type="//@types.2"/>
+  </classes>
+  <types xsi:type="classdiagram:CDVoid"/>
+  <types xsi:type="classdiagram:CDAny"/>
+  <types xsi:type="classdiagram:CDBoolean"/>
+  <types xsi:type="classdiagram:CDDouble"/>
+  <types xsi:type="classdiagram:CDInt"/>
+  <types xsi:type="classdiagram:CDLong"/>
+  <types xsi:type="classdiagram:CDString"/>
+  <types xsi:type="classdiagram:CDByte"/>
+  <types xsi:type="classdiagram:CDFloat"/>
+  <types xsi:type="classdiagram:CDChar"/>
+  <types xsi:type="classdiagram:CDEnum" name="BanditType">
+    <literals name="Doc"/>
+    <literals name="Ghost"/>
+    <literals name="Belle"/>
+    <literals name="Django"/>
+    <literals name="Cheyenne"/>
+    <literals name="Tuco"/>
+  </types>
+  <types xsi:type="classdiagram:CDEnum" name="TurnType">
+    <literals name="StandardTurn"/>
+    <literals name="Tunnel"/>
+    <literals name="SpeedingUp"/>
+    <literals name="Switching"/>
+    <literals name="Turmoil"/>
+  </types>
+  <types xsi:type="classdiagram:CDEnum" name="Level">
+    <literals name="Floor"/>
+    <literals name="Roof"/>
+  </types>
+  <types xsi:type="classdiagram:CDEnum" name="Phase">
+    <literals name="Schemin"/>
+    <literals name="Stealin"/>
+  </types>
+  <types xsi:type="classdiagram:CDEnum" name="CardType">
+    <literals name="Bullet"/>
+    <literals name="NeutralBullet"/>
+    <literals name="RideAction"/>
+    <literals name="MoveAction"/>
+    <literals name="ShootAction"/>
+    <literals name="RobAction"/>
+    <literals name="MarshalAction"/>
+    <literals name="PunchAction"/>
+  </types>
+  <associations name="Card_Player" ends="//@classes.1/@associationEnds.0 //@classes.0/@associationEnds.0"/>
+  <associations name="Player_Game" ends="//@classes.0/@associationEnds.1 //@classes.2/@associationEnds.0"/>
+  <associations name="Player_Game" ends="//@classes.0/@associationEnds.2 //@classes.2/@associationEnds.1"/>
+  <associations name="GameBoard_Game" ends="//@classes.3/@associationEnds.0 //@classes.2/@associationEnds.2"/>
+  <associations name="Hand_Player" ends="//@classes.4/@associationEnds.0 //@classes.0/@associationEnds.3"/>
+  <associations name="Hand_Card" ends="//@classes.4/@associationEnds.1 //@classes.1/@associationEnds.1"/>
+  <associations name="Bandit_Bandit" ends="//@classes.5/@associationEnds.0 //@classes.5/@associationEnds.1"/>
+  <associations name="Bandit_Player" ends="//@classes.5/@associationEnds.2 //@classes.0/@associationEnds.4"/>
+  <associations name="Session_Player" ends="//@classes.15/@associationEnds.0 //@classes.0/@associationEnds.5"/>
+  <associations name="Player_Session" ends="//@classes.0/@associationEnds.6 //@classes.15/@associationEnds.1"/>
+  <associations name="Session_Game" ends="//@classes.15/@associationEnds.2 //@classes.2/@associationEnds.3"/>
+  <associations name="GuiActor_Player" ends="//@classes.14/@associationEnds.0 //@classes.0/@associationEnds.7"/>
+  <notes notedElement="//@classes.13" content="Connected to System"/>
+  <layout>
+    <containers key="/">
+      <value key="//@classes.0">
+        <value x="249.95068" y="-577.0373"/>
+      </value>
+      <value key="//@types.10">
+        <value x="1474.5758" y="-257.09552"/>
+      </value>
+      <value key="//@types.11">
+        <value x="1474.5758" y="-544.7045"/>
+      </value>
+      <value key="//@types.12">
+        <value x="1685.2091" y="-205.12332"/>
+      </value>
+      <value key="//@types.13">
+        <value x="1685.2091" y="-40.958565"/>
+      </value>
+      <value key="//@types.14">
+        <value x="1685.2091" y="-583.8713"/>
+      </value>
+      <value key="//@classes.1">
+        <value x="484.89905" y="-198.62332"/>
+      </value>
+      <value key="//@classes.2">
+        <value x="687.62335" y="-332.1896"/>
+      </value>
+      <value key="//@classes.3">
+        <value x="694.12335" y="100.89836"/>
+      </value>
+      <value key="//@classes.4">
+        <value x="107.9505" y="-170.62332"/>
+      </value>
+      <value key="//@classes.5">
+        <value x="-414.97372" y="-630.30505"/>
+      </value>
+      <value key="//@classes.6">
+        <value x="-1392.8011" y="-373.16333"/>
+      </value>
+      <value key="//@classes.7">
+        <value x="1474.592" y="36.71826"/>
+      </value>
+      <value key="//@classes.8">
+        <value x="-615.01324" y="-374.8321"/>
+      </value>
+      <value key="//@classes.9">
+        <value x="-810.3228" y="-374.31546"/>
+      </value>
+      <value key="//@classes.10">
+        <value x="-1548.0297" y="-471.20453"/>
+      </value>
+      <value key="//@classes.11">
+        <value x="-1001.1753" y="-368.8798"/>
+      </value>
+      <value key="//@classes.12">
+        <value x="-1205.203" y="-373.16333"/>
+      </value>
+      <value key="//@classes.13">
+        <value x="914.4244" y="-808.42346"/>
+      </value>
+      <value key="//@classes.14">
+        <value x="194.96393" y="-808.42346"/>
+      </value>
+      <value key="//@classes.15">
+        <value x="747.7521" y="-662.31866"/>
+      </value>
+      <value key="//@notes.0">
+        <value x="1129.8583" y="-728.738"/>
+      </value>
+    </containers>
+  </layout>
+</classdiagram:ClassDiagram>

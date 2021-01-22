@@ -1,0 +1,36 @@
+.bodybg
+{
+    -fx-background-image: url("background.png");
+    -fx-background-size: 100% 100%;   
+}
+.bodytrain
+{
+    -fx-background-image: url("train.png");
+    -fx-background-size: 100% 100%;   
+}
+.bodywagon
+{
+    -fx-background-image: url("wagon.png");
+    -fx-background-size: 100% 100%;   
+}
+.bodystagecoach
+{
+    -fx-background-image: url("stageCoach.png");
+    -fx-background-size: 100% 100%;  
+}
+.bodybelle
+{	
+	-fx-background-image: url("BellePawn.png");
+    -fx-background-size: 100% 100%;  
+}
+.bodydjango
+{	
+	-fx-background-image: url("Django.png");
+    -fx-background-size: 100% 120%;  
+}
+.bodycheyenne
+{	
+	-fx-background-image: url("cheyenne.png");
+    -fx-background-size: 100% 100%;  
+}
+

@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="ASCII"?>
+<classdiagram:ClassDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:classdiagram="http://cs.mcgill.ca/sel/cdm/1.0" name="ConceptModelServer">
+  <classes xsi:type="classdiagram:Class" name="Player" superTypes="//@classes.6" abstract="true">
+    <associationEnds name="mygame" assoc="//@associations.0" lowerBound="1"/>
+    <associationEnds name="participants" assoc="//@associations.1" lowerBound="3" upperBound="6"/>
+    <associationEnds name="myClientActor" assoc="//@associations.2" lowerBound="1"/>
+    <associationEnds name="punchables" assoc="//@associations.4" upperBound="6"/>
+    <associationEnds name="shootables" assoc="//@associations.5" upperBound="5"/>
+    <associationEnds name="myPlayer" assoc="//@associations.5" lowerBound="1"/>
+    <associationEnds name="loots" assoc="//@associations.6" upperBound="-1" referenceType="Aggregation"/>
+    <associationEnds name="robbable" assoc="//@associations.7" upperBound="-1"/>
+    <associationEnds name="resolvable" assoc="//@associations.8"/>
+    <associationEnds name="hand" assoc="//@associations.9" lowerBound="6" upperBound="-1"/>
+    <associationEnds name="deck" assoc="//@associations.10" lowerBound="17" upperBound="-1"/>
+    <associationEnds name="steed" assoc="//@associations.17"/>
+    <attributes name="username" type="//@types.6"/>
+    <attributes name="password" type="//@types.6"/>
+    <attributes name="status" type="//@types.19"/>
+    <attributes name="hostage" type="//@types.10"/>
+    <attributes name="bandit" type="//@types.20"/>
+  </classes>
+  <classes xsi:type="classdiagram:Class" name="Game">
+    <associationEnds name="currentPlayer" assoc="//@associations.0" lowerBound="1"/>
+    <associationEnds name="game" assoc="//@associations.1" lowerBound="1"/>
+    <associationEnds name="REST" assoc="//@associations.3" lowerBound="1"/>
+    <associationEnds name="board" assoc="//@associations.11" lowerBound="1"/>
+    <associationEnds name="currentRound" assoc="//@associations.12" lowerBound="4" upperBound="4" referenceType="Aggregation"/>
+    <attributes name="gamephase" type="//@types.18"/>
+    <attributes name="numberofplayers" type="//@types.4"/>
+    <attributes name="stationRound" type="//@types.16"/>
+  </classes>
+  <classes xsi:type="classdiagram:Class" name="JoinStatus">
+    <attributes name="ready" type="//@types.2"/>
+  </classes>
+  <classes xsi:type="classdiagram:Class" name="Marshal" superTypes="//@classes.4"/>
+  <classes xsi:type="classdiagram:Class" name="Placeable" abstract="true">
+    <attributes name="place" type="//@classes.5"/>
+  </classes>
+  <classes xsi:type="classdiagram:Class" name="Position" dataType="true">
+    <attributes name="place" type="//@types.15"/>
+    <attributes name="level" type="//@types.14"/>
+  </classes>
+  <classes xsi:type="classdiagram:Class" name="Punchable" superTypes="//@classes.4" abstract="true">
+    <associationEnds name="myPlayer" navigable="false" assoc="//@associations.4" lowerBound="1"/>
+  </classes>
+  <classes xsi:type="classdiagram:Class" name="Loot" superTypes="//@classes.4">
+    <associationEnds name="owner" assoc="//@associations.6" lowerBound="1"/>
+    <associationEnds name="myPlayer" assoc="//@associations.7" lowerBound="1"/>
+    <attributes name="loot" type="//@types.11"/>
+    <attributes name="value" type="//@types.4"/>
+  </classes>
+  <classes xsi:type="classdiagram:Class" name="AngryShotgun" superTypes="//@classes.6"/>
+  <classes xsi:type="classdiagram:Class" name="ClientActor">
+    <associationEnds name="avatar" assoc="//@associations.2" lowerBound="1"/>
+  </classes>
+  <classes xsi:type="classdiagram:Class" name="LobbyServiceActor">
+    <associationEnds name="availableGames" assoc="//@associations.3" upperBound="-1"/>
+  </classes>
+  <classes xsi:type="classdiagram:Class" name="Card">
+    <associationEnds name="myPlayer" assoc="//@associations.8" lowerBound="1"/>
+    <associationEnds name="myPlayer1" assoc="//@associations.9" lowerBound="1"/>
+    <associationEnds name="myPlayer2" assoc="//@associations.10" lowerBound="1"/>
+    <attributes name="type" type="//@types.17"/>
+    <attributes name="visible" type="//@types.2"/>
+  </classes>
+  <classes xsi:type="classdiagram:Class" name="GameBoard">
+    <associationEnds name="myGame" assoc="//@associations.11" lowerBound="1"/>
+    <associationEnds name="horses" assoc="//@associations.13" lowerBound="3" upperBound="6" referenceType="Composition"/>
+    <associationEnds name="traincars" assoc="//@associations.14" lowerBound="5" upperBound="5" referenceType="Composition"/>
+    <associationEnds name="stagecoach" assoc="//@associations.15" lowerBound="1" referenceType="Composition"/>
+  </classes>
+  <classes xsi:type="classdiagram:Class" name="Round">
+    <associationEnds name="myGame" assoc="//@associations.12" lowerBound="1"/>
+    <attributes name="turn1" type="//@types.12"/>
+    <attributes name="turn2" type="//@types.12"/>
+    <attributes name="turn3" type="//@types.12"/>
+    <attributes name="turn4" type="//@types.12"/>
+    <attributes name="event" type="//@types.13"/>
+  </classes>
+  <classes xsi:type="classdiagram:Class" name="Horse">
+    <associationEnds name="myboard" assoc="//@associations.13" lowerBound="1"/>
+    <associationEnds name="horses" assoc="//@associations.16" upperBound="6"/>
+    <associationEnds name="rider" assoc="//@associations.17"/>
+  </classes>
+  <classes xsi:type="classdiagram:Class" name="TrainCar">
+    <associationEnds name="myGameBoard" assoc="//@associations.14" lowerBound="1"/>
+    <associationEnds name="car" assoc="//@associations.16" lowerBound="1"/>
+  </classes>
+  <classes xsi:type="classdiagram:Class" name="Stagecoach">
+    <associationEnds name="myboard" assoc="//@associations.15" lowerBound="1"/>
+  </classes>
+  <classes xsi:type="classdiagram:Class" name="Adjacent">
+    <attributes name="adjacent" type="//@types.2"/>
+  </classes>
+  <types xsi:type="classdiagram:CDVoid"/>
+  <types xsi:type="classdiagram:CDAny"/>
+  <types xsi:type="classdiagram:CDBoolean"/>
+  <types xsi:type="classdiagram:CDDouble"/>
+  <types xsi:type="classdiagram:CDInt"/>
+  <types xsi:type="classdiagram:CDLong"/>
+  <types xsi:type="classdiagram:CDString"/>
+  <types xsi:type="classdiagram:CDByte"/>
+  <types xsi:type="classdiagram:CDFloat"/>
+  <types xsi:type="classdiagram:CDChar"/>
+  <types xsi:type="classdiagram:CDEnum" name="HostageType">
+    <literals name="TheLadysPoodle"/>
+    <literals name="TheBanker"/>
+    <literals name="TheMinister"/>
+    <literals name="TheTeacher"/>
+    <literals name="TheZealot"/>
+    <literals name="TheOldLady"/>
+    <literals name="ThePokerPlayer"/>
+    <literals name="ThePhotographer"/>
+  </types>
+  <types xsi:type="classdiagram:CDEnum" name="LootType">
+    <literals name="Jewel"/>
+    <literals name="Purse"/>
+    <literals name="StrongBox"/>
+    <literals name="OldWhiskey"/>
+    <literals name="NewWhiskey"/>
+  </types>
+  <types xsi:type="classdiagram:CDEnum" name="TurnType">
+    <literals name="Standard"/>
+    <literals name="Tunnel"/>
+    <literals name="SpeedingUp"/>
+    <literals name="Switching"/>
+    <literals name="Turmoil"/>
+  </types>
+  <types xsi:type="classdiagram:CDEnum" name="Event">
+    <literals name="PantingHorse"/>
+    <literals name="ShotOWhiskey"/>
+    <literals name="HigherSpeed"/>
+    <literals name="ShotgunsRage"/>
+    <literals name="MortalBullet"/>
+    <literals name="Escape"/>
+    <literals name="SharingLoot"/>
+  </types>
+  <types xsi:type="classdiagram:CDEnum" name="Level">
+    <literals name="Floor"/>
+    <literals name="Roof"/>
+  </types>
+  <types xsi:type="classdiagram:CDEnum" name="TrainElement">
+    <literals name="Traincar1"/>
+    <literals name="Traincar2"/>
+    <literals name="Traincar3"/>
+    <literals name="Traincar4"/>
+    <literals name="Locomotive"/>
+    <literals name="Stagecoach"/>
+  </types>
+  <types xsi:type="classdiagram:CDEnum" name="TrainStation">
+    <literals name="MarshalsRevenge"/>
+    <literals name="Pickpocket"/>
+    <literals name="HostageConductor"/>
+  </types>
+  <types xsi:type="classdiagram:CDEnum" name="CardType">
+    <literals name="Bullet"/>
+    <literals name="NeutralBullet"/>
+    <literals name="RideAction"/>
+    <literals name="MoveAction"/>
+    <literals name="ShootAction"/>
+    <literals name="RobAction"/>
+    <literals name="MarshalAction"/>
+    <literals name="PunchAction"/>
+  </types>
+  <types xsi:type="classdiagram:CDEnum" name="Phase">
+    <literals name="Schemin"/>
+    <literals name="Stealin"/>
+  </types>
+  <types xsi:type="classdiagram:CDEnum" name="PlayerStatus">
+    <literals name="Offline"/>
+    <literals name="Ready"/>
+    <literals name="Available"/>
+    <literals name="InGame"/>
+  </types>
+  <types xsi:type="classdiagram:CDEnum" name="PlayableCharacter">
+    <literals name="Doc"/>
+    <literals name="Ghost"/>
+    <literals name="Django"/>
+    <literals name="Cheyenne"/>
+    <literals name="Belle"/>
+    <literals name="Tuco"/>
+  </types>
+  <associations name="Player_Game" ends="//@classes.0/@associationEnds.0 //@classes.1/@associationEnds.0"/>
+  <associations name="Game_Player" ends="//@classes.1/@associationEnds.1 //@classes.0/@associationEnds.1" associationClass="//@classes.2"/>
+  <associations name="ClientActor_Player" ends="//@classes.9/@associationEnds.0 //@classes.0/@associationEnds.2"/>
+  <associations name="Game_LobbyServiceActor" ends="//@classes.1/@associationEnds.2 //@classes.10/@associationEnds.0"/>
+  <associations name="Player_Punchable" ends="//@classes.0/@associationEnds.3 //@classes.6/@associationEnds.0"/>
+  <associations name="Player_Player" ends="//@classes.0/@associationEnds.4 //@classes.0/@associationEnds.5"/>
+  <associations name="Player_Loot" ends="//@classes.0/@associationEnds.6 //@classes.7/@associationEnds.0"/>
+  <associations name="Player_Loot" ends="//@classes.0/@associationEnds.7 //@classes.7/@associationEnds.1"/>
+  <associations name="Card_Player" ends="//@classes.11/@associationEnds.0 //@classes.0/@associationEnds.8"/>
+  <associations name="Card_Player" ends="//@classes.11/@associationEnds.1 //@classes.0/@associationEnds.9"/>
+  <associations name="Card_Player" ends="//@classes.11/@associationEnds.2 //@classes.0/@associationEnds.10"/>
+  <associations name="Game_GameBoard" ends="//@classes.1/@associationEnds.3 //@classes.12/@associationEnds.0"/>
+  <associations name="Round_Game" ends="//@classes.13/@associationEnds.0 //@classes.1/@associationEnds.4"/>
+  <associations name="Horse_GameBoard" ends="//@classes.14/@associationEnds.0 //@classes.12/@associationEnds.1"/>
+  <associations name="TrainCar_GameBoard" ends="//@classes.15/@associationEnds.0 //@classes.12/@associationEnds.2"/>
+  <associations name="Stagecoach_GameBoard" ends="//@classes.16/@associationEnds.0 //@classes.12/@associationEnds.3"/>
+  <associations name="TrainCar_Horse" ends="//@classes.15/@associationEnds.1 //@classes.14/@associationEnds.1" associationClass="//@classes.17"/>
+  <associations name="Player_Horse" ends="//@classes.0/@associationEnds.11 //@classes.14/@associationEnds.2"/>
+  <notes content="resolvable is part of hand is part of deck"/>
+  <notes content="currentPlayer is a subset of participants&#xA;participants are ordered, unique"/>
+  <notes content="ordered, unique"/>
+  <notes content="NOTE:&#xA;stagecoach adjacency to a car is determined by the round number"/>
+  <layout>
+    <containers key="/">
+      <value key="//@classes.0">
+        <value x="194.95303" y="154.00914"/>
+      </value>
+      <value key="//@classes.1">
+        <value x="850.6896" y="56.184143"/>
+      </value>
+      <value key="//@types.10">
+        <value x="-65.34898" y="-521.13464"/>
+      </value>
+      <value key="//@types.11">
+        <value x="885.1896" y="-482.13467"/>
+      </value>
+      <value key="//@types.12">
+        <value x="684.68365" y="-482.13467"/>
+      </value>
+      <value key="//@types.13">
+        <value x="-255.57938" y="-508.13467"/>
+      </value>
+      <value key="//@types.14">
+        <value x="327.5" y="-443.13467"/>
+      </value>
+      <value key="//@types.15">
+        <value x="509.74634" y="-495.13467"/>
+      </value>
+      <value key="//@types.16">
+        <value x="-608.7612" y="-516.1558"/>
+      </value>
+      <value key="//@types.17">
+        <value x="-799.98425" y="-521.13464"/>
+      </value>
+      <value key="//@types.18">
+        <value x="1071.9569" y="-443.13467"/>
+      </value>
+      <value key="//@types.19">
+        <value x="127.56244" y="-469.13467"/>
+      </value>
+      <value key="//@classes.2">
+        <value x="381.6536" y="-77.64168"/>
+      </value>
+      <value key="//@associations.1">
+        <value x="390.0" y="61.0"/>
+      </value>
+      <value key="//@classes.3">
+        <value x="-432.59338" y="48.050842"/>
+      </value>
+      <value key="//@classes.4">
+        <value x="-186.85759" y="-160.9772"/>
+      </value>
+      <value key="//@classes.5">
+        <value x="-440.59338" y="-508.15582"/>
+      </value>
+      <value key="//@classes.6">
+        <value x="-81.95961" y="48.050842"/>
+      </value>
+      <value key="//@classes.7">
+        <value x="-242.59338" y="19.989471"/>
+      </value>
+      <value key="//@classes.8">
+        <value x="-600.7612" y="141.05084"/>
+      </value>
+      <value key="//@types.20">
+        <value x="1252.0776" y="-404.67947"/>
+      </value>
+      <value key="//@classes.9">
+        <value x="-487.58636" y="331.9125"/>
+      </value>
+      <value key="//@classes.10">
+        <value x="705.96295" y="-212.87662"/>
+      </value>
+      <value key="//@classes.11">
+        <value x="208.63083" y="731.8495"/>
+      </value>
+      <value key="//@notes.0">
+        <value x="105.13083" y="585.65485"/>
+      </value>
+      <value key="//@classes.12">
+        <value x="1269.5776" y="141.20087"/>
+      </value>
+      <value key="//@classes.13">
+        <value x="885.1896" y="331.62192"/>
+      </value>
+      <value key="//@notes.1">
+        <value x="455.0" y="-0.63884354"/>
+      </value>
+      <value key="//@notes.2">
+        <value x="718.472" y="220.14471"/>
+      </value>
+      <value key="//@classes.14">
+        <value x="1215.8309" y="516.0412"/>
+      </value>
+      <value key="//@classes.15">
+        <value x="1616.3416" y="331.9125"/>
+      </value>
+      <value key="//@classes.16">
+        <value x="1691.6366" y="141.23146"/>
+      </value>
+      <value key="//@classes.17">
+        <value x="1137.5873" y="683.83636"/>
+      </value>
+      <value key="//@associations.16">
+        <value x="826.0" y="596.0"/>
+      </value>
+      <value key="//@notes.3">
+        <value x="1321.6635" y="36.98947"/>
+      </value>
+    </containers>
+  </layout>
+</classdiagram:ClassDiagram>

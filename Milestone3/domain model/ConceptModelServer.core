@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ASCII"?>
+<core:COREConcern xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://cs.mcgill.ca/sel/core/2.0" xmi:id="_w34CcDHhEeuM0-GqSLI5AA" name="ConceptModelServer" featureModel="_w34CcTHhEeuM0-GqSLI5AA" impactModel="_w34CczHhEeuM0-GqSLI5AA">
+  <artefacts xsi:type="core:COREFeatureModel" xmi:id="_w34CcTHhEeuM0-GqSLI5AA" root="_w34CcjHhEeuM0-GqSLI5AA">
+    <features xmi:id="_w34CcjHhEeuM0-GqSLI5AA" name="ConceptModelServer" realizedBy="_znWgcTHhEeuM0-GqSLI5AA"/>
+  </artefacts>
+  <artefacts xsi:type="core:COREImpactModel" xmi:id="_w34CczHhEeuM0-GqSLI5AA" name="Impact Model"/>
+  <artefacts xsi:type="core:COREExternalArtefact" xmi:id="_znWgcDHhEeuM0-GqSLI5AA" name="ConceptModelServer" scene="_znWgcTHhEeuM0-GqSLI5AA" languageName="Class Diagram">
+    <rootModelElement href="Class%20Diagram/ConceptModelServer.domain_model.cdm#/"/>
+  </artefacts>
+  <scenes xmi:id="_znWgcTHhEeuM0-GqSLI5AA" name="ConceptModelServer" realizes="_w34CcjHhEeuM0-GqSLI5AA" perspectiveName="Domain Modelling">
+    <artefacts xmi:id="_znWgcjHhEeuM0-GqSLI5AA" value="_znWgcDHhEeuM0-GqSLI5AA" key="Domain Model"/>
+  </scenes>
+</core:COREConcern>
